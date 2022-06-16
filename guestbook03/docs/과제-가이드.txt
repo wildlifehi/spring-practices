@@ -1,0 +1,31 @@
+com.douzone.guestbook.controller
+com.douzone.guestbook.repository
+com.douzone.guestbook.vo
+
+
+
+
+* 꼭 다음의 방식으로 처리할 것.
+
+위에 번호로 적어준것들은 전부 메소드이름들.
+
+
+1) index
+GET /guestbook                     - list 할 때, 
+> index.jsp로 
+
+
+2) delete(@PathVariable("no") Long on)
+GET /guestbook/delete/10        - deleteform 할 때, 
+> delete.jsp로 forward 작업
+
+3) delete(
+		@PathVariable("no") Long on,
+		@RequestParam(value="password", required=true, defaultValue="") String password)
+POST /guestbook/delete/5        - delete 할 때
+redirect:/ 작업
+
+
+4) insert
+POST /guestbook                   - insert할 때,
+redirect:/
